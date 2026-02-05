@@ -4,6 +4,7 @@ metadata:
   name: creator-api
   labels:
     app: creator-api
+  namespace: homolog  
 spec:
   type: ClusterIP
   selector:
