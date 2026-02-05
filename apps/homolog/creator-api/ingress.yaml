@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: creator-api-ingress
+  namespace: homolog
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: api-hmlg-crtrads.xpto.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: creator-api
+                port:
+                  number: 8080
