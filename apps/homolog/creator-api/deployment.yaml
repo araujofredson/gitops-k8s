@@ -24,7 +24,7 @@ spec:
               app: creator-api 
       containers:
         - name: creator-api
-          image: nginx
+          image: httpd
           ports:
             - containerPort: 80
           readinessProbe:
