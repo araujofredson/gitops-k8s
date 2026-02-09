@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: api-hmlg-crtrads.xpto.com
+    - host: hmlg-social.xpto.com
       http:
         paths:
           - path: /
