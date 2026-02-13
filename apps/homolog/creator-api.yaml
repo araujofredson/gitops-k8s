@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: creator-api
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: creator-api=gcr.io/homolog/fastech/creator-api
+    argocd-image-updater.argoproj.io/update-strategy: newest-build
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:brandlovers-team/cicd-k8s.git
+    targetRevision: main
+    path: apps/homolog/creator-api
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: homolog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
