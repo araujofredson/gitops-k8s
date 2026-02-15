@@ -20,7 +20,9 @@ spec:
           whenUnsatisfiable: ScheduleAnyway    
           labelSelector:                        
             matchLabels:                      
-              app: creator-api 
+              app: creator-api
+      imagePullSecrets:
+        - name: artifact-registry-secret        
       containers:
         - name: creator-api
           image: gcr.io/fastech-homolog/creator-api:latest
